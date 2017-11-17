@@ -72,9 +72,11 @@ else:
     scraped_data = scrape_data(my_urls)
     # Insert data to MongoDB
     conn = mongo_connect() #connect to MongoDB
-    db = conn[DBS_NAME] # db name
-    coll = db[COLLECTION_NAME] # db collectinon name
-    coll.drop()  # remove the collection to avoid duplicates when testing
-    coll.insert(scraped_data) # insert scraped data to db
-    
-    
+    try:  
+        db = conn[DBS_NAME] # db name
+        coll = db[COLLECTION_NAME] # db collectinon name
+        coll.drop()  # remove the collection to avoid duplicates when testing
+        coll.insert(scraped_data) # insert scraped data to db
+        print "Added "
+    except:
+        print "Unable to add record to database due to unrecognized error."
