@@ -77,6 +77,6 @@ else:
         coll = db[COLLECTION_NAME] # db collectinon name
         coll.drop()  # remove the collection to avoid duplicates when testing
         coll.insert(scraped_data) # insert scraped data to db
-        print "Added "
+        print "Added documents to MongoDB successfully!"
     except:
         print "Unable to add record to database due to unrecognized error."
