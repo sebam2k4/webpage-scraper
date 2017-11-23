@@ -15,3 +15,11 @@ The app can easily be modified to scrape other parts of a webpage
 2. edit settings.py to change db, collection, csv names and db connection settings. (or use the defaults)
 3. make sure you have mongoDB (mongod) running locally. run `python scrape_and_scrape_db.py` command in your terminal
 4. look at your MongoDB collection full od documents with all that scraped data and enjoy!
+
+### Things in need of improvement
+* some links don't work due to not having a title and/or description tags in their html. Introduce login to handle this type of situation
+```
+site_title = soup.title.string
+AttributeError: 'NoneType' object has no attribute 'string'
+```
+* Also suspecting some issue with url char encoding
