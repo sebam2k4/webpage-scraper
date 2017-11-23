@@ -7,7 +7,7 @@ from settings import MONGODB_HOST, MONGODB_PORT, DBS_NAME, COLLECTION_NAME, CSV_
 
 '''
 Creates a MongoDb database with collection name
-scrape for data, connecto to MongoDB, create db, create, collection, and
+scrape for data, connecto to MongoDB, create db, create collection, and
 insert to collection.
 '''
 
